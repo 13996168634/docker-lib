@@ -1,0 +1,2 @@
+FROM gcr.io/google_containers/fluentd-elasticsearch:1.17
+MAINTAINER alvin <tz466731927@126.com>
