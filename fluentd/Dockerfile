@@ -4,4 +4,5 @@ RUN	yum -y install initscripts redhat-lsb-core
 ADD	td-agent-2.3.3-0.el7.x86_64.rpm /root/
 RUN rpm -ivh /root/td-agent-2.3.3-0.el7.x86_64.rpm && rm -f /root/td-agent-2.3.3-0.el7.x86_64.rpm
 RUN	/usr/sbin/td-agent-gem install fluent-plugin-elasticsearch fluent-plugin-typecast fluent-plugin-secure-forward
+COPY td-agent.conf /etc/td-agent/td-agent.conf
 ENTRYPOINT	["/usr/sbin/td-agent" , "-c" , "/etc/td-agent/td-agent.conf"]
